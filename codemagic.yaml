@@ -1,0 +1,12 @@
+environment:
+  xcode: latest
+  cocoapods: true
+
+workflows:
+  build_for_simulator:
+    name: Build iOS for Simulator
+    environment:
+      xcode: latest
+    scripts:
+      - name: Build for iOS Simulator
+        script: xcodebuild -workspace Runner.xcworkspace -scheme Runner -destination 'platform=iOS Simulator,name=iPhone 12' -configuration Debug clean build
